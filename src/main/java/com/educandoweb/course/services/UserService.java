@@ -20,13 +20,24 @@ public class UserService {
     public User findById(Long id) {
         return repository.findById(id).orElseThrow(() -> new RuntimeException("User not found"));
     }
+
     public User insert(User user) {
         return repository.save(user);
     }
+
     public void delete(Long id) {
         repository.deleteById(id);
     }
-    public User update(User user) {
-        return repository.save(user);
+
+    public User update(Long id, User user) {
+        User entity = repository.getReferenceById(id);
+        updateData(entity, user);
+        return repository.save(entity);
+    }
+
+    private void updateData(User entity, User obj) {
+        entity.setName(obj.getName());
+        entity.setEmail(obj.getEmail());
+        entity.setPassword(obj.getPassword());
     }
 }
