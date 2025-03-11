@@ -20,4 +20,7 @@ public class UserService {
     public User findById(Long id) {
         return repository.findById(id).orElseThrow(() -> new RuntimeException("User not found"));
     }
+    public User insert(User user) {
+        return repository.save(user);
+    }
 }
