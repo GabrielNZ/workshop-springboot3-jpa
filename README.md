@@ -7,6 +7,8 @@ workshop-springboot3 its a back-end RESTful API project, from the course [DevSup
 
 The application consists of searching, creating, updating, and deleting users and their orders. All of that with Spring Boot.
 
+![image](https://github.com/user-attachments/assets/58ee4ea1-904d-4566-8440-78a1d8394b1e)
+
 # Tecnologies
 ## Back end
 - Java
@@ -19,5 +21,6 @@ The application consists of searching, creating, updating, and deleting users an
 # Autor
 
 Gabriel Nicolodi Zimmermann
+
 
 [https://www.linkedin.com/in/gabriel-n-zimmermann-aba618338/]
