@@ -4,7 +4,6 @@ package com.educandoweb.course.config;
 import com.educandoweb.course.entities.*;
 import com.educandoweb.course.entities.enums.OrderStatus;
 import com.educandoweb.course.repositories.*;
-import com.educandoweb.course.services.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
