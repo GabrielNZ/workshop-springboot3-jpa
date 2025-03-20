@@ -3,7 +3,7 @@
 
 # About the project
 
-workshop-springboot3 its a back-end RESTful API project, from the course [DevSuperior](https://www.udemy.com/course/java-curso-completo/).
+workshop-springboot3 is a back-end RESTful API project, from the course [DevSuperior](https://www.udemy.com/course/java-curso-completo/).
 
 The application consists of searching, creating, updating, and deleting users and their orders. All of that with Spring Boot.
 
