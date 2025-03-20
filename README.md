@@ -1,5 +1,5 @@
 # Workshop Project
-[![NPM](https://img.shields.io/npm/l/react)](https://github.com/GabrielNZ/workshop-springboot3-jpa/tree/main?tab=MIT-1-ov-file#MIT-1-ov-file) 
+[![NPM](https://github.com/GabrielNZ/workshop-springboot3-jpa/blob/main/LICENSE) 
 
 # About the project
 
