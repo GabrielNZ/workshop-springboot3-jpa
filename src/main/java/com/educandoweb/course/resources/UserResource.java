@@ -4,11 +4,15 @@ import com.educandoweb.course.entities.User;
 import com.educandoweb.course.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
 import java.util.List;
+
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
 @RestController
 @RequestMapping(value = "/users")
@@ -19,12 +23,19 @@ public class UserResource {
     @GetMapping
     public ResponseEntity<List<User>> findAll() {
         List<User> list = service.findAll();
+        if (!list.isEmpty()) {
+            for (User user : list) {
+                user.add(linkTo(methodOn(UserResource.class).findById(user.getId())).withSelfRel());
+            }
+        }
         return ResponseEntity.ok().body(list);
     }
 
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     @GetMapping("/{id}")
     public ResponseEntity<User> findById(@PathVariable Long id) {
         User user = service.findById(id);
+        user.add(linkTo(methodOn(UserResource.class).findAll()).withSelfRel());
         return ResponseEntity.ok().body(user);
     }
 
